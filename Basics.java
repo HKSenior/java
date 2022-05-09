@@ -94,6 +94,7 @@ public class Basics {
 
         System.out.format("Hello, %s of %d years. Your favorite dish is %s.\n", name, age, dish);
         System.out.print("\n--- This marks the end of User Input\n\n");
+        scanner.close();
     }
 
     public static void expressions() {
@@ -127,9 +128,29 @@ public class Basics {
         System.out.print("\n--- This marks the end of Expressions\n\n");
     }
 
+    public static void math() {
+        System.out.print("--- This marks the beginning of Math\n\n");
+
+        double x = 3.1415;
+        double y = -10;
+
+        System.out.format("The maximum between %f and %f is %f.\n", x, y, Math.max(x, y));
+        System.out.format("The absolute value of %f is %f.\n", y, Math.abs(y));
+        System.out.format("The square root of 25 is %f.\n", Math.sqrt(25));
+        System.out.format("The closest whole number to %f is %d.\n", x, Math.round(x));
+        System.out.format(
+                "The ceiling (round up) of %f is %f and the floor (round down) is %f.\n",
+                x,
+                Math.ceil(x),
+                Math.floor(x));
+
+        System.out.print("\n--- This marks the end of Math\n\n");
+    }
+
     public static void main(String[] args) {
         dataTypes();
         userInput();
         expressions();
+        math();
     }
 }
