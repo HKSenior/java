@@ -18,7 +18,7 @@ public class Basics {
          *   Uses less memory                           |   Uses more memory
          *   Faster than reference data types           |   Slower compared to primitive data types
          *
-         ***************************************************************************************************************/
+         **************************************************************************************************************/
         // 1 bit has 2 values (0 or 1 / true or false)
         // 1 byte has 8 bits (-128 to 127)
 
@@ -80,6 +80,17 @@ public class Basics {
         scanner.nextLine();
         System.out.print("What is your favorite dish? ");
         String dish = scanner.nextLine();
+
+        /************************************************** Side Note **************************************************
+         * In the code above you'll see scanner.nextLine() was called again after .nextInt(). Why is that? Well there
+         * is a small caveat when reading in numbers (integers/doubles) then strings. When the first .nextLine() was
+         * called the function uses the newline character (/n) as the delimiter. This means java can determine it has
+         * processed a full line once it comes across the new line character. For numbers, it's a little different. Java
+         * stops reading once it encounters a non-numerical character. Therefore, when you enter your age and press
+         * enter java doesn't remove the newline character and the end of your input because the "/" would be considered
+         * non-numerical. Which is why the following .nextLine() is important. This call essentially clears the input
+         * by removing the trailing newline character.
+         **************************************************************************************************************/
 
         System.out.format("Hello, %s of %d years. Your favorite dish is %s.\n", name, age, dish);
         System.out.print("\n--- This marks the end of User Input\n\n");
