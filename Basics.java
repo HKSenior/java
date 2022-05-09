@@ -101,7 +101,7 @@ public class Basics {
 
         // Expressions are made up of operands and operators
         // operands are values and variables
-        // operators are +, -, /, *, %, ++, --, +=, -=
+        // operators are +, -, /, *, %, ++, --, +=, -=, /=, *=
 
         int friends = 10;
 
