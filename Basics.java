@@ -1,4 +1,5 @@
 import java.nio.charset.StandardCharsets;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Basics {
@@ -147,10 +148,27 @@ public class Basics {
         System.out.print("\n--- This marks the end of Math\n\n");
     }
 
+    public static void random() {
+        System.out.print("--- This marks the beginning of Random\n\n");
+
+        // The following class doesn't generate true random numbers but instead generates pseudo random numbers.
+        Random random = new Random();
+        int x = random.nextInt(6) + 1;
+        Boolean y = random.nextBoolean();
+        Double z = random.nextDouble();
+
+        System.out.format("The generated random integer is %d.\n", x);
+        System.out.format("The generated random boolean is %b.\n", y);
+        System.out.format("The generated random double is %f.\n", z);
+
+        System.out.print("\n--- This marks the end of Random\n\n");
+    }
+
     public static void main(String[] args) {
         dataTypes();
         userInput();
         expressions();
         math();
+        random();
     }
 }
