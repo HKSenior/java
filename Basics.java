@@ -96,8 +96,40 @@ public class Basics {
         System.out.print("\n--- This marks the end of User Input\n\n");
     }
 
+    public static void expressions() {
+        System.out.print("--- This marks the beginning of Expressions\n\n");
+
+        // Expressions are made up of operands and operators
+        // operands are values and variables
+        // operators are +, -, /, *, %, ++, --, +=, -=
+
+        int friends = 10;
+
+        System.out.format("We have %d friends.\n", friends);
+        System.out.format("We are gaining one friend so we now have %d friends.\n", friends += 1);
+        System.out.format("We are losing two friend so we now have %d friends.\n", friends -= 2);
+        System.out.format("We are gaining 3 times as many friends, so we now have %d friends.\n", friends *= 3);
+        System.out.format("We are losing half of our friends, so we now have %d friends.\n", friends /= 2);
+        System.out.format("We are gaining one more friend on the next print, be we have %d friends.\n", friends++);
+        System.out.format("We now have %d friends.\n", friends);
+
+        /************************************************** Side Note **************************************************
+         * % is the remainder operator (also called modulus)
+         * ++ is incremental
+         * -- is decremental
+         *
+         * One thing to take note off when dealing with the incremental and decremental operators is that there is a
+         * difference between ++friends and friends++. These are called pre-incremental and post-incremental
+         * respectfully. Pre-incremental adds 1 to the variable before returning the value where are post-incremental
+         * adds 1 after returning the variable. The same goes for the decremental operator.
+         **************************************************************************************************************/
+
+        System.out.print("\n--- This marks the end of Expressions\n\n");
+    }
+
     public static void main(String[] args) {
         dataTypes();
         userInput();
+        expressions();
     }
 }
