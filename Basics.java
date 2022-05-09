@@ -64,7 +64,7 @@ public class Basics {
         System.out.print("\n--- This marks the end of Data Types\n\n");
     }
 
-    public static void userInput() {
+    public static int userInput() {
         System.out.print("--- This marks the beginning of User Input\n\n");
 
         // User Input
@@ -96,6 +96,7 @@ public class Basics {
         System.out.format("Hello, %s of %d years. Your favorite dish is %s.\n", name, age, dish);
         System.out.print("\n--- This marks the end of User Input\n\n");
         scanner.close();
+        return age;
     }
 
     public static void expressions() {
@@ -164,11 +165,58 @@ public class Basics {
         System.out.print("\n--- This marks the end of Random\n\n");
     }
 
+    public static void flowControl(int age) {
+        System.out.print("--- This marks the beginning of Flow Control\n\n");
+
+        /*********************************************** Flow Control **************************************************
+         * 1) If Statements
+         *      If statements will run a block of code if the condition given evaluates to true. You can use an if-else
+         *      block when you need another block of code to run when the condition is not true. Therefore, you can
+         *      use a series of if-else-if statements to create custom logic.
+         * 2) Switch Statements
+         *      Switch statements allow you to test a variable against a list of values. This method is usually
+         *      preferred if you have too many if-else-if statements.
+         * 3) Ternary Operator
+         *      This operator is used as follows:
+         *          condition ? when_true : when_false
+         *      For example:
+         *          int age = 19;
+         *          System.out.println(age >= 18 ? "Adult" : "Not an adult");
+         **************************************************************************************************************/
+
+        // If statements
+        if (age >= 75) {
+            System.out.println("Ok Boomer!!!");
+        } else if (age >= 18) {
+            System.out.println("Congratulations, you are an adult");
+        } else if (age >= 13) {
+            System.out.println("You are a teenager");
+        } else {
+            System.out.println("You are not an adult");
+        }
+
+        // Switch statements
+        String day = "Friday";
+        switch (day) {
+            case "Sunday" -> System.out.println("Today is a day of rest");
+            case "Saturday" -> System.out.println("Today is Saturday");
+            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ->
+                    System.out.println("Today is a day of the week");
+            default -> System.out.println("Invalid day");
+        }
+
+        // Ternary Operator
+        System.out.println(age >= 18 ? "Adult" : "Not an adult");
+
+        System.out.print("\n--- This marks the end of Flow Control\n\n");
+    }
+
     public static void main(String[] args) {
         dataTypes();
-        userInput();
+        int age = userInput();
         expressions();
         math();
         random();
+        flowControl(age);
     }
 }
