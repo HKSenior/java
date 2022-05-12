@@ -64,14 +64,10 @@ public class Basics {
         System.out.print("\n--- This marks the end of Data Types\n\n");
     }
 
-    public static int userInput() {
+    public static int userInput(Scanner scanner) {
         System.out.print("--- This marks the beginning of User Input\n\n");
 
         // User Input
-        // The scanner class is capable of parsing primitive data types and strings using regular expressions. It splits
-        // The input into tokens by using a delimiter which is set to whitespace by default.
-        Scanner scanner = new Scanner(System.in);
-
         // The following line will print the string to the console but because this uses the .print method it will not
         // print a new line. Therefore, the user will be able to enter his/her name on the same line.
         System.out.print("What is your name? ");
@@ -95,7 +91,6 @@ public class Basics {
 
         System.out.format("Hello, %s of %d years. Your favorite dish is %s.\n", name, age, dish);
         System.out.print("\n--- This marks the end of User Input\n\n");
-        scanner.close();
         return age;
     }
 
@@ -184,7 +179,7 @@ public class Basics {
          *          System.out.println(age >= 18 ? "Adult" : "Not an adult");
          **************************************************************************************************************/
 
-        // If statements
+        // If-else-if statements
         if (age >= 75) {
             System.out.println("Ok Boomer!!!");
         } else if (age >= 18) {
@@ -211,12 +206,41 @@ public class Basics {
         System.out.print("\n--- This marks the end of Flow Control\n\n");
     }
 
+    public static void logicalOperators(Scanner scanner) {
+        System.out.print("--- This marks the beginning of Logical Operators\n\n");
+
+        /*
+         * Logical operators are used to connect two or more expressions.
+         *      && = (AND) both conditions must be true
+         *      || = (OR) either condition must be true
+         *      ! = (NOT) reverses boolean value
+         */
+        System.out.println("You are now playing a game!!!");
+        System.out.println("Press q or Q to quit");
+        String response = scanner.next();
+
+        if (response.equals("q") || response.equals("Q")) {
+            System.out.println("You have quit the game :)");
+        } else {
+            System.out.println("You've decided to continue playing the game :)");
+        }
+
+        System.out.print("\n--- This marks the end of Logical Operators\n\n");
+    }
+
     public static void main(String[] args) {
+        // The scanner class is capable of parsing primitive data types and strings using regular expressions. It splits
+        // The input into tokens by using a delimiter which is set to whitespace by default.
+        Scanner scanner = new Scanner(System.in);
+
         dataTypes();
-        int age = userInput();
+        int age = userInput(scanner);
         expressions();
         math();
         random();
         flowControl(age);
+        logicalOperators(scanner);
+
+        scanner.close();
     }
 }
