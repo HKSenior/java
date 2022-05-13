@@ -202,14 +202,13 @@ public class Basics {
 
         // Ternary Operator
         System.out.println(age >= 18 ? "Adult" : "Not an adult");
-
         System.out.print("\n--- This marks the end of Flow Control\n\n");
     }
 
     public static void logicalOperators(Scanner scanner) {
         System.out.print("--- This marks the beginning of Logical Operators\n\n");
 
-        /*
+        /**
          * Logical operators are used to connect two or more expressions.
          *      && = (AND) both conditions must be true
          *      || = (OR) either condition must be true
@@ -228,6 +227,33 @@ public class Basics {
         System.out.print("\n--- This marks the end of Logical Operators\n\n");
     }
 
+    public static void loops() {
+        System.out.print("--- This marks the beginning of Loops\n\n");
+
+        /*********************************************** Loops *********************************************************
+         * There are 3 types of loops. The for, while and do while loop. The for loop is used when you have a condition
+         * and a variable (preferably and integer) to control the number of loops executed. A while loop is typically
+         * used when you have a boolean expression to loop over. Do while loops are a special case when you need some
+         * code to execute before the boolean expression is evaluated.
+         **************************************************************************************************************/
+
+        // For loops - Print "I am a developer" 5 times.
+        for (int i = 0; i < 5; i++) { System.out.println("I am a developer"); }
+
+        // While loop - Print "I live in Virginia" 6 times.
+        int index = 0;
+        while (index < 6) { System.out.println("I live in Virginia"); index++; }
+
+        // Do while loop - Print "I love lamborghini" 7 times.
+        index = 0;
+        do {
+            System.out.println("I love lamborghini");
+            index++;
+        } while (index < 7);
+
+        System.out.print("\n--- This marks the end of Loops\n\n");
+    }
+
     public static void main(String[] args) {
         // The scanner class is capable of parsing primitive data types and strings using regular expressions. It splits
         // The input into tokens by using a delimiter which is set to whitespace by default.
@@ -240,6 +266,7 @@ public class Basics {
         random();
         flowControl(age);
         logicalOperators(scanner);
+        loops();
 
         scanner.close();
     }
